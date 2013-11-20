@@ -1,0 +1,4 @@
+platinumcoin
+============
+
+PLC
