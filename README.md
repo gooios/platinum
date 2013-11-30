@@ -12,7 +12,10 @@ Platinum Coin is an evolution in Cryto. Based off [PPCoin](http://ppcoin.org/) (
 [Platinum Coin Wiki](https://github.com/gooios/platinumcoin/wiki)
 * Help: 
 [Forum](http:/its.hoop.la/),
-[Other Sites and Links...](http://www.isellbit.co.in/plcoin)(http://www.cryptlist.com)(http://sCRYPThost.com)
+[Other Sites and Links...](http://www.isellbit.co.in/plcoin)
+http://www.cryptlist.com 
+http://sCRYPThost.com
+http://isellBIT.CO.IN
 
 Repo Guidelines
 ================================
