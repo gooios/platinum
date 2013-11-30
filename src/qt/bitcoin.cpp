@@ -1,6 +1,7 @@
 /*
  * W.J. van der Laan 2011-2012
  * The PPCoin Developers 2013
+ * The Platinum Developers 2013-2014
  */
 #include "bitcoingui.h"
 #include "clientmodel.h"
