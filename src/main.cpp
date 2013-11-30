@@ -1417,7 +1417,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex)
         mapQueuedChanges[tx.GetHash()] = CTxIndex(posThisTx, tx.vout.size());
     }
 
-    // plcoin: track money supply and mint amount info
+    // platinum: track money supply and mint amount info
     pindex->nMint = nValueOut - nValueIn + nFees;
     pindex->nMoneySupply = (pindex->pprev? pindex->pprev->nMoneySupply : 0) + nValueOut - nValueIn;
     if (!txdb.WriteBlockIndex(CDiskBlockIndex(pindex)))
@@ -1430,8 +1430,8 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex)
             return error("ConnectBlock() : UpdateTxIndex failed");
     }
 
-    // plcoin: fees are not collected by miners as in bitcoin
-    // plcoin: fees are destroyed to compensate the entire network
+    // platinum: fees are not collected by miners as in bitcoin
+    // platinum: fees are destroyed to compensate the entire network
     if (fDebug && GetBoolArg("-printcreation"))
         printf("ConnectBlock() : destroy=%s nFees=%"PRI64d"\n", FormatMoney(nFees).c_str(), nFees);
 
