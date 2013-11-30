@@ -1,19 +1,18 @@
-
-PPCoin Official Development Repo
+Platinum Coin Official Development Repo
 ================================
 
-### What is PPCoin?
-[PPCoin](http://ppcoin.org/) (abbreviated PPC), also known as Peercoin and Peer-to-Peer Coin is the first known [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)  designed as a combined [proof-of-stake](http://ppcoin.org/static/ppcoin-paper.pdf)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) system. PPCoin is build upon [Bitcoin](http://bitcoin.org/en/), but unique in the fact that it is more energy efficiency, as proof-of-stake blocks require minimal energy consumption. Thus, with PPCoin energy consumption would decrease over time as proof-of-work blocks become less rewarding and coin generation becomes increasingly based on proof-of-stake block generation.
+### What is PLatinum Coin? (abbreviated PLC)
+Platinum Coin is an evolution in Cryto. Based off [PPCoin](http://ppcoin.org/) (abbreviated PPC), also known as Peercoin and Peer-to-Peer Coin is the first known [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)  designed as a combined [proof-of-stake](http://ppcoin.org/static/ppcoin-paper.pdf)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) system. PPCoin is build upon [Bitcoin](http://bitcoin.org/en/), but unique in the fact that it is more energy efficiency, as proof-of-stake blocks require minimal energy consumption. Thus, with PPCoin energy consumption would decrease over time as proof-of-work blocks become less rewarding and coin generation becomes increasingly based on proof-of-stake block generation.
 
 ### PPCoin Resources
 * Client and Source:
-[Client Binaries](http://sourceforge.net/projects/ppcoin/files/),
-[Source Code](https://github.com/ppcoin/ppcoin)
+[Client Binaries](http://sourceforge.net/projects/gooios/files/),
+[Source Code](https://github.com/gooios/platinumcoin)
 * Documentation: [PPCoin Whitepaper](http://ppcoin.org/static/ppcoin-paper.pdf),
 [PPCoin Wiki](https://github.com/ppcoin/ppcoin/wiki)
 * Help: 
-[Forum](http://www.ppcointalk.org/),
-[Other Sites and Links...](http://www.ppcointalk.org/index.php?topic=4.0;topicseen)
+[Forum](http:/its.hoop.la/),
+[Other Sites and Links...](http://www.gooios.com/plcoin)
 
 Repo Guidelines
 ================================
