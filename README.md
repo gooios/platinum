@@ -9,10 +9,10 @@ Platinum Coin is an evolution in Cryto. Based off [PPCoin](http://ppcoin.org/) (
 [Client Binaries](http://sourceforge.net/projects/gooios/files/),
 [Source Code](https://github.com/gooios/platinumcoin)
 * Documentation: [PPCoin Whitepaper](http://ppcoin.org/static/ppcoin-paper.pdf),
-[PPCoin Wiki](https://github.com/ppcoin/ppcoin/wiki)
+[Platinum Coin Wiki](https://github.com/gooios/platinumcoin/wiki)
 * Help: 
 [Forum](http:/its.hoop.la/),
-[Other Sites and Links...](http://www.gooios.com/plcoin)
+[Other Sites and Links...](http://www.isellbit.co.in/plcoin)(http://www.cryptlist.com)(http://sCRYPThost.com)
 
 Repo Guidelines
 ================================
@@ -22,4 +22,4 @@ Repo Guidelines
 * If it is a more complicated or potentially controversial change, then the change may be discussed in the pull request, or the requester may be asked to start a discussion [PLCoin Talk](http://its.hoop.la/) for a broader community discussion. 
 * The patch will be accepted if there is broad consensus that it is a good thing. Developers should expect to rework and resubmit patches if they don't match the project's coding conventions (see coding.txt) or are controversial.
 * From time to time a pull request will become outdated. If this occurs, and the pull is no longer automatically mergeable; a comment on the pull will be used to issue a warning of closure.  Pull requests closed in this manner will have their corresponding issue labeled 'stagnant'.
-* For development ideas and help see [here](http://www.ppcointalk.org/index.php?board=10.0).
+* For development ideas and help see [here](http://its.hoop.la).
