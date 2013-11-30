@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2013 The PPCoin developers
-// Copyright (c) 2011-2013 The PLatinumCoin developers
+// Copyright (c) 2011-2013 The Platinum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -2244,7 +2244,7 @@ bool LoadBlockIndex(bool fAllowNew)
         // Genesis block
         const char* pszTimestamp = "11-29-2013 Comet Ison headed towards the sun";
         CTransaction txNew;
-        txNew.nTime = 1345083810;
+        txNew.nTime = 1385787368;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(9999) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2254,13 +2254,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1385773023;
+        block.nTime    = 1385787368;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = 2179302059u;
 
         if (fTestNet)
         {
-            block.nTime    = 1385773023;
+            block.nTime    = 1385787368;
             block.nNonce   = 122894938;
         }
 
