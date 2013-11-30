@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = platinumcoin-qt
+TARGET = platinum-qt
 VERSION = 0.1.2.6
 INCLUDEPATH += src src/json src/qt
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
