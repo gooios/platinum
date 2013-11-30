@@ -1,9 +1,9 @@
-Building Platinum Coin
+Building Platinum
 
-See doc/readme-qt.rst for instructions on building Platinumcoin-QT,
+See doc/readme-qt.rst for instructions on building Platinum-QT,
 the intended-for-end-users, nice-graphical-interface, reference
 implementation of Platinum coin.
 
-See doc/build-*.txt for instructions on building platinumcoind,
+See doc/build-*.txt for instructions on building platinumd,
 the intended-for-services, no-graphical-interface, reference
-implementation of Platinum coin.
+implementation of Platinum.
