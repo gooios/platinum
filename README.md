@@ -2,7 +2,7 @@ Platinum Official Development Repo
 ================================
 
 ### What is PLaTinum? (abbreviated PLT)
-Platinum Coin is an evolution in Cryto. Based off [PPCoin](http://ppcoin.org/) (abbreviated PPC), also known as Peercoin and Peer-to-Peer Coin is the first known [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)  designed as a combined [proof-of-stake](http://ppcoin.org/static/ppcoin-paper.pdf)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) system. PLatinum Coin is also built upon [Bitcoin](http://bitcoin.org/en/), but unique in the fact that it is more energy efficiency, as proof-of-stake blocks require minimal energy consumption. Thus, with Platinum energy consumption would decrease over time as proof-of-work blocks become less rewarding and coin generation becomes increasingly based on proof-of-stake block generation.
+Platinum  is an evolution in Crypto. Based off [PPCoin](http://ppcoin.org/) (abbreviated PPC), also known as Peercoin and Peer-to-Peer Coin is the first known [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)  designed as a combined [proof-of-stake](http://ppcoin.org/static/ppcoin-paper.pdf)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) system. PLatinum Coin is also built upon [Bitcoin](http://bitcoin.org/en/), but unique in the fact that it is more energy efficiency, as proof-of-stake blocks require minimal energy consumption. Thus, with Platinum energy consumption would decrease over time as proof-of-work blocks become less rewarding and coin generation becomes increasingly based on proof-of-stake block generation.
 
 ### PLaTinum Resources
 * Client and Source:
