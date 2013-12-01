@@ -349,7 +349,7 @@ Value gethashespersec(const Array& params, bool fHelp)
 }
 
 
-// ppcoin: get network Gh/s estimate
+// Platinum: get network Gh/s estimate
 Value getnetworkghps(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
@@ -438,7 +438,7 @@ Value getnewaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress [account]\n"
-            "Returns a new ppcoin address for receiving payments.  "
+            "Returns a new Platinum address for receiving payments.  "
             "If [account] is specified (recommended), it is added to the address book "
             "so payments received with the address will be credited to [account].");
 
@@ -505,7 +505,7 @@ Value getaccountaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress <account>\n"
-            "Returns the current ppcoin address for receiving payments to this account.");
+            "Returns the current Platinum address for receiving payments to this account.");
 
     // Parse the account first so we don't generate a key if there's an error
     string strAccount = AccountFromValue(params[0]);
@@ -523,12 +523,12 @@ Value setaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "setaccount <ppcoinaddress> <account>\n"
+            "setaccount <platinumaddress> <account>\n"
             "Sets the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid ppcoin address");
+        throw JSONRPCError(-5, "Invalid Platinum address");
 
 
     string strAccount;
@@ -553,12 +553,12 @@ Value getaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "getaccount <ppcoinaddress>\n"
+            "getaccount <platinumaddress>\n"
             "Returns the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid ppcoin address");
+        throw JSONRPCError(-5, "Invalid Platinum address");
 
     string strAccount;
     map<CBitcoinAddress, string>::iterator mi = pwalletMain->mapAddressBook.find(address);
@@ -606,17 +606,17 @@ Value sendtoaddress(const Array& params, bool fHelp)
 {
     if (pwalletMain->IsCrypted() && (fHelp || params.size() < 2 || params.size() > 4))
         throw runtime_error(
-            "sendtoaddress <ppcoinaddress> <amount> [comment] [comment-to]\n"
+            "sendtoaddress <platinumaddress> <amount> [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001\n"
             "requires wallet passphrase to be set with walletpassphrase first");
     if (!pwalletMain->IsCrypted() && (fHelp || params.size() < 2 || params.size() > 4))
         throw runtime_error(
-            "sendtoaddress <ppcoinaddress> <amount> [comment] [comment-to]\n"
+            "sendtoaddress <platinumaddress> <amount> [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid ppcoin address");
+        throw JSONRPCError(-5, "Invalid Platinum address");
 
     // Amount
     int64 nAmount = AmountFromValue(params[1]);
@@ -644,7 +644,7 @@ Value signmessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
-            "signmessage <ppcoinaddress> <message>\n"
+            "signmessage <platinumaddress> <message>\n"
             "Sign a message with the private key of an address");
 
     if (pwalletMain->IsLocked())
@@ -676,7 +676,7 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-            "verifymessage <ppcoinaddress> <signature> <message>\n"
+            "verifymessage <platinumaddress> <signature> <message>\n"
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();
@@ -709,14 +709,14 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "getreceivedbyaddress <ppcoinaddress> [minconf=1]\n"
-            "Returns the total amount received by <ppcoinaddress> in transactions with at least [minconf] confirmations.");
+            "getreceivedbyaddress <platinumaddress> [minconf=1]\n"
+            "Returns the total amount received by <platinumaddress> in transactions with at least [minconf] confirmations.");
 
     // Bitcoin address
     CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid ppcoin address");
+        throw JSONRPCError(-5, "Invalid Platinum address");
     scriptPubKey.SetBitcoinAddress(address);
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
