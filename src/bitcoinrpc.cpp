@@ -931,18 +931,18 @@ Value sendfrom(const Array& params, bool fHelp)
 {
     if (pwalletMain->IsCrypted() && (fHelp || params.size() < 3 || params.size() > 6))
         throw runtime_error(
-            "sendfrom <fromaccount> <toppcoinaddress> <amount> [minconf=1] [comment] [comment-to]\n"
+            "sendfrom <fromaccount> <toplatinumaddress> <amount> [minconf=1] [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001\n"
             "requires wallet passphrase to be set with walletpassphrase first");
     if (!pwalletMain->IsCrypted() && (fHelp || params.size() < 3 || params.size() > 6))
         throw runtime_error(
-            "sendfrom <fromaccount> <toppcoinaddress> <amount> [minconf=1] [comment] [comment-to]\n"
+            "sendfrom <fromaccount> <toplatinumaddress> <amount> [minconf=1] [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001");
 
     string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid ppcoin address");
+        throw JSONRPCError(-5, "Invalid platinum address");
     int64 nAmount = AmountFromValue(params[2]);
     if (nAmount < MIN_TXOUT_AMOUNT)
         throw JSONRPCError(-101, "Send amount too small");
@@ -1005,7 +1005,7 @@ Value sendmany(const Array& params, bool fHelp)
     {
         CBitcoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(-5, string("Invalid ppcoin address:")+s.name_);
+            throw JSONRPCError(-5, string("Invalid platinum address:")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(-8, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -1684,7 +1684,7 @@ Value walletpassphrase(const Array& params, bool fHelp)
     int64* pnSleepTime = new int64(params[1].get_int64());
     CreateThread(ThreadCleanWalletPassphrase, pnSleepTime);
 
-    // ppcoin: if user OS account compromised prevent trivial sendmoney commands
+    // platinum: if user OS account compromised prevent trivial sendmoney commands
     if (params.size() > 2)
         fWalletUnlockMintOnly = params[2].get_bool();
     else
@@ -1779,7 +1779,7 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys.  So:
     StartShutdown();
-    return "wallet encrypted; ppcoin server stopping, restart to run with encrypted wallet";
+    return "wallet encrypted; platinum server stopping, restart to run with encrypted wallet";
 }
 
 
@@ -1787,8 +1787,8 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "validateaddress <ppcoinaddress>\n"
-            "Return information about <ppcoinaddress>.");
+            "validateaddress <platinumaddress>\n"
+            "Return information about <platinumaddress>.");
 
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -1850,10 +1850,10 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "PPCoin is not connected!");
+        throw JSONRPCError(-9, "Platinum is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "PPCoin is downloading blocks...");
+        throw JSONRPCError(-10, "Platinum is downloading blocks...");
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;
@@ -1964,10 +1964,10 @@ Value getmemorypool(const Array& params, bool fHelp)
     if (params.size() == 0)
     {
         if (vNodes.empty())
-            throw JSONRPCError(-9, "PPCoin is not connected!");
+            throw JSONRPCError(-9, "Platinum is not connected!");
 
         if (IsInitialBlockDownload())
-            throw JSONRPCError(-10, "PPCoin is downloading blocks...");
+            throw JSONRPCError(-10, "Platinum is downloading blocks...");
 
         static CReserveKey reservekey(pwalletMain);
 
@@ -2075,7 +2075,7 @@ Value getblock(const Array& params, bool fHelp)
 }
 
 
-// ppcoin: get information of sync-checkpoint
+// platinum: get information of sync-checkpoint
 Value getcheckpoint(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
@@ -2097,7 +2097,7 @@ Value getcheckpoint(const Array& params, bool fHelp)
 }
 
 
-// ppcoin: reserve balance from being staked for network protection
+// platinum: reserve balance from being staked for network protection
 Value reservebalance(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 2)
@@ -2139,7 +2139,7 @@ Value reservebalance(const Array& params, bool fHelp)
 }
 
 
-// ppcoin: check wallet integrity
+// platinum: check wallet integrity
 Value checkwallet(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 0)
@@ -2218,7 +2218,7 @@ Value makekeypair(const Array& params, bool fHelp)
 extern CCriticalSection cs_mapAlerts;
 extern map<uint256, CAlert> mapAlerts;
 
-// ppcoin: send alert.  
+// platinum: send alert.  
 // There is a known deadlock situation with ThreadMessageHandler
 // ThreadMessageHandler: holds cs_vSend and acquiring cs_main in SendMessages()
 // ThreadRPCServer: holds cs_main and acquiring cs_vSend in alert.RelayTo()/PushMessage()/BeginMessage()
@@ -2377,7 +2377,7 @@ string HTTPPost(const string& strMsg, const map<string,string>& mapRequestHeader
 {
     ostringstream s;
     s << "POST / HTTP/1.1\r\n"
-      << "User-Agent: ppcoin-json-rpc/" << FormatFullVersion() << "\r\n"
+      << "User-Agent: platinum-json-rpc/" << FormatFullVersion() << "\r\n"
       << "Host: 127.0.0.1\r\n"
       << "Content-Type: application/json\r\n"
       << "Content-Length: " << strMsg.size() << "\r\n"
@@ -2408,7 +2408,7 @@ static string HTTPReply(int nStatus, const string& strMsg)
     if (nStatus == 401)
         return strprintf("HTTP/1.0 401 Authorization Required\r\n"
             "Date: %s\r\n"
-            "Server: ppcoin-json-rpc/%s\r\n"
+            "Server: platinum-json-rpc/%s\r\n"
             "WWW-Authenticate: Basic realm=\"jsonrpc\"\r\n"
             "Content-Type: text/html\r\n"
             "Content-Length: 296\r\n"
@@ -2435,7 +2435,7 @@ static string HTTPReply(int nStatus, const string& strMsg)
             "Connection: close\r\n"
             "Content-Length: %d\r\n"
             "Content-Type: application/json\r\n"
-            "Server: ppcoin-json-rpc/%s\r\n"
+            "Server: platinum-json-rpc/%s\r\n"
             "\r\n"
             "%s",
         nStatus,
@@ -2649,7 +2649,7 @@ void ThreadRPCServer2(void* parg)
     {
         unsigned char rand_pwd[32];
         RAND_bytes(rand_pwd, 32);
-        string strWhatAmI = "To use ppcoind";
+        string strWhatAmI = "To use platinumd";
         if (mapArgs.count("-server"))
             strWhatAmI = strprintf(_("To use the %s option"), "\"-server\"");
         else if (mapArgs.count("-daemon"))
