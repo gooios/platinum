@@ -6,7 +6,7 @@ Platinum  is an evolution in Crypto. Based off [PPCoin](http://ppcoin.org/) (abb
 
 ### PLaTinum Resources
 * Client and Source:
-[Client Binaries](http://sourceforge.net/projects/gooios/files/),
+[Client Binaries](https://plt.co.in),
 [Source Code](https://github.com/gooios/platinum)
 * Documentation: [PPCoin Whitepaper](http://ppcoin.org/static/ppcoin-paper.pdf),
 [Platinum Coin Wiki](https://github.com/gooios/platinum/wiki)
@@ -26,3 +26,6 @@ Repo Guidelines
 * The patch will be accepted if there is broad consensus that it is a good thing. Developers should expect to rework and resubmit patches if they don't match the project's coding conventions (see coding.txt) or are controversial.
 * From time to time a pull request will become outdated. If this occurs, and the pull is no longer automatically mergeable; a comment on the pull will be used to issue a warning of closure.  Pull requests closed in this manner will have their corresponding issue labeled 'stagnant'.
 * For development ideas and help see [here](http://its.hoop.la).
+
+https://plt.co.in
+
